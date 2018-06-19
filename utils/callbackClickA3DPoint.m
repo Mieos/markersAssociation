@@ -51,10 +51,13 @@ else % if it is not the first click
 
 end
 
+
 if usedID == 1
-    assignin('base','pointCloudIndex_GT',pointCloudIndex);
+    global pointCloudIndex_GT;
+    pointCloudIndex_GT = pointCloudIndex;
 else
-    assignin('base','pointCloudIndex_Used',pointCloudIndex);
+    global pointCloudIndex_Used;
+    pointCloudIndex_Used = pointCloudIndex;
 end
 
 

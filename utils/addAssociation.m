@@ -1,7 +1,7 @@
 function addAssociation( src, eventData)
 
 % Load global variables
-global pointCloudIndex_GT pointCloudIndex_Used; % PC
+global pointCloudIndex_GT pointCloudIndex_Used; % Index
 global X correspondances; % associations
 
 if pointCloudIndex_GT>0 && pointCloudIndex_Used>0

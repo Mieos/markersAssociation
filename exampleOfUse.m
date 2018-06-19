@@ -1,5 +1,8 @@
 %% Markers association example test
 
+clear all;
+close all;
+
 mexOCVpath = '/home/rmodrzejewski/Install/mexopencv';
 pointsPath_GT='/media/rmodrzejewski/656B654224A0D697/Pig_Balls_Exp/05/markers.yml';
 pointsPath_Used='/media/rmodrzejewski/656B654224A0D697/Pig_Balls_Exp/08/markers.yml';
