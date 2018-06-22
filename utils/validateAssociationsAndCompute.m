@@ -97,11 +97,16 @@ pcshow(pcU,'MarkerSize',150);
 hold on; 
 pointCloudPoint = pcU.Location;
 pointCloudPoint = pointCloudPoint';
-X(58)
+% r(1,58) = 1;
+% r(2,58) = 0;
+% r(3,58) = 0;
 for i=(numberBalls+1):totalMarkers
-    selectedPoint = pointCloudPoint(:, X(i));
+    selectedPoint = pointCloudPoint(:, i);
     plot3(selectedPoint(1,:), selectedPoint(2,:), selectedPoint(3,:), ...
-        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 5, 'Marker', '*'); 
+        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 20, 'Marker', '*'); 
+%     plot3(selectedPoint(1,:), selectedPoint(2,:), selectedPoint(3,:), ...
+%         'Color', [1, 0, 0] , 'MarkerSize', 20, 'Marker', '*'); 
+
 end
 figure('Name','GT');
 pcshow(pcGT,'MarkerSize',150);
@@ -111,7 +116,7 @@ pointCloudPoint = pointCloudPoint';
 for i=(numberBalls+1):totalMarkers
     selectedPoint = pointCloudPoint(:,i);
     plot3(selectedPoint(1,:), selectedPoint(2,:), selectedPoint(3,:), ...
-        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 5, 'Marker', '*'); 
+        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 20, 'Marker', '*'); 
 end
 
 end

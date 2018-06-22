@@ -33,13 +33,9 @@ hold on; % so we can highlight clicked points without clearing the figure
 
 % Update the markers view of the points
 for i=(numberBalls+1):totalMarkers
-    if usedID == 1
-        selectedPoint = pointCloudPoint(:, i);
-    else
-        selectedPoint = pointCloudPoint(:, X(i));
-    end
+    selectedPoint = pointCloudPoint(:, i);
     h = plot3(selectedPoint(1,:), selectedPoint(2,:), selectedPoint(3,:), ...
-        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 5, 'Marker', '*'); 
+        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 20, 'Marker', '*'); 
 
 end
 
