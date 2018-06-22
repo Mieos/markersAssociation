@@ -44,6 +44,10 @@ else
 end
 
 X=reshape(X,n,k);
+
+X
+sum(X>0,2)
+
 assert(all(sum(X>0,2)==1));
 % Ws=full(Ws);
 X0=X;

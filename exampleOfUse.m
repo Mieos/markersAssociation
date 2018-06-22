@@ -3,7 +3,7 @@
 clear all;
 close all;
 
-numTest = "06";
+numTest = "10";
 masterPath = "/media/rmodrzejewski/656B654224A0D697/Pig_Balls_Exp/";
 
 mexOCVpath = '/home/rmodrzejewski/Install/mexopencv';
