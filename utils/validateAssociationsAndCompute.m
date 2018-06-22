@@ -13,6 +13,8 @@ global r; %Color
 % Close clicking objects
 close all;
 
+correspondances
+
 % Build allowed associations matrix
 E12 = ones(nP1,nP2);
 % Manual associations
@@ -92,8 +94,25 @@ figResults = figure('Name','Results');
 uicontrol(figResults,'String','Continue','Position', [20 20 120 20],'Callback', {@loopAssociation});
 uicontrol(figResults,'String','Save and Quit','Position', [150 20 150 20],'Callback', {@saveAndStop});
 pcshow(pcU,'MarkerSize',150);
+hold on; 
+pointCloudPoint = pcU.Location;
+pointCloudPoint = pointCloudPoint';
+X(58)
+for i=(numberBalls+1):totalMarkers
+    selectedPoint = pointCloudPoint(:, X(i));
+    plot3(selectedPoint(1,:), selectedPoint(2,:), selectedPoint(3,:), ...
+        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 5, 'Marker', '*'); 
+end
 figure('Name','GT');
 pcshow(pcGT,'MarkerSize',150);
+hold on; 
+pointCloudPoint = pcGT.Location;
+pointCloudPoint = pointCloudPoint';
+for i=(numberBalls+1):totalMarkers
+    selectedPoint = pointCloudPoint(:,i);
+    plot3(selectedPoint(1,:), selectedPoint(2,:), selectedPoint(3,:), ...
+        'Color', [r(i,1), r(i,2), r(i,3)] , 'MarkerSize', 5, 'Marker', '*'); 
+end
 
 end
 

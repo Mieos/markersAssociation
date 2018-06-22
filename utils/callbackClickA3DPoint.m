@@ -38,7 +38,15 @@ if isempty(h) % if it's the first click (i.e. no previous point to delete)
     % highlight the selected point
     h = plot3(selectedPoint(1,:), selectedPoint(2,:), ...
         selectedPoint(3,:), 'r.', 'MarkerSize', 20); 
+    
+    %% DEBUG
+%     h = plot3(selectedPoint(1,:), selectedPoint(2,:), ...
+%         selectedPoint(3,:), 'r.', 'MarkerSize', 20, 'Marker', '*'); 
+    
     set(h,'Tag','pt'); % set its Tag property for later use   
+    
+%     h
+    
 
 else % if it is not the first click
 

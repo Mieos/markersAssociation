@@ -39,13 +39,13 @@ pGT = horzcat(ballsGT,clipsGT);
 pUsed = horzcat(ballsUsed,clipsUsed);
 
 % Get number of points
-[size_x_gt,size_y_gt] = size(pGT);
-[size_x_used,size_y_used] = size(pUsed);
+[~,size_y_gt] = size(pGT);
+[~,size_y_used] = size(pUsed);
 global nP1 nP2;
 nP1=size_y_gt;
 nP2=size_y_used;
-[inter1x,inter1y]=size(ballsUsed);
-[inter2x,inter2y]=size(clipsUsed);
+[~,inter1y]=size(ballsUsed);
+[~,inter2y]=size(clipsUsed);
 global numberBalls numberClips totalMarkers;
 numberBalls=inter1y;
 numberClips=inter2y;
