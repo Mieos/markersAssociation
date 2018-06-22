@@ -1,8 +1,10 @@
 function associateMarkers( mexOpenCVPath, pointsPath_GT, pointsPath_Used, resultPathIN, resultPLYPathIN, resultPLYPathGTIN)
 
 % Add paths
-%contribPath = mexOpenCVPath + "/opencv_contrib" NOT WORKING FIXME
-contribPath = '/home/rmodrzejewski/Install/mexopencv/opencv_contrib';
+contribPath = mexOpenCVPath + "/opencv_contrib";
+contribPath = char(contribPath);
+%contribPath = '/home/rmodrzejewski/Install/mexopencv/opencv_contrib';
+
 % OpenCV
 addpath(mexOpenCVPath)
 addpath(contribPath);
