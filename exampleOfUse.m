@@ -3,24 +3,24 @@
 clear all;
 close all;
 
-numTest = "10";
-masterPath = "/media/rmodrzejewski/656B654224A0D697/Pig_Balls_Exp/";
+numTest = "05";
+masterPath = "/media/rmodrzejewski/Maxtor/data/metalPigsXP/";
 
 mexOCVpath = '/home/rmodrzejewski/Install/mexopencv';
 
-pointsPath_GT=masterPath+"05/markers.yml";
+pointsPath_GT=masterPath+"model/segmentations/ballsAndClips/markers.yml";
 pointsPath_GT=char(pointsPath_GT);
 
-pointsPath_Used=masterPath+numTest+"/markers.yml";
+pointsPath_Used=masterPath+"targets/"+numTest+"/markers.yml";
 pointsPath_Used=char(pointsPath_Used);
 
-resultPath = masterPath+numTest+"/results/associations_with05.yml";
+resultPath = masterPath+"targets/"+numTest+"/resultsAssociations/v1/associations.yml";
 resultPath=char(resultPath);
 
-resultPLYPath = masterPath+numTest+"/results/associations_with05_U.ply";
+resultPLYPath = masterPath+"targets/"+numTest+"/resultsAssociations/v1/associations_U.ply";
 resultPLYPath=char(resultPLYPath);
 
-resultPLYPathGT = masterPath+numTest+"/results/associations_with05_GT.ply";
+resultPLYPathGT = masterPath+"targets/"+numTest+"/resultsAssociations/v1/associations_GT.ply";
 resultPLYPathGT=char(resultPLYPathGT);
 
 associateMarkers(mexOCVpath, pointsPath_GT, pointsPath_Used, resultPath, resultPLYPath , resultPLYPathGT);
