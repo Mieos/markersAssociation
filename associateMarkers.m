@@ -1,13 +1,5 @@
-function associateMarkers( mexOpenCVPath, pointsPath_GT, pointsPath_Used, resultPathIN, resultPLYPathIN, resultPLYPathGTIN)
+function associateMarkers(pointsPath_inside_GT, pointsPath_outside_GT, pointsPath_inside_Tested, pointsPath_outside_Tested, resultPathIN, resultPLYPathIN , resultPLYPathGTIN)
 
-% Add paths
-contribPath = mexOpenCVPath + "/opencv_contrib";
-contribPath = char(contribPath);
-%contribPath = '/home/rmodrzejewski/Install/mexopencv/opencv_contrib';
-
-% OpenCV
-addpath(mexOpenCVPath)
-addpath(contribPath);
 %Utils
 addpath('utils');
 % Graph Matching
@@ -28,12 +20,14 @@ sigma = 5.0;
 neighbors = 5;
 
 % Read matrix
-p_GT = cv.FileStorage(pointsPath_GT);
-p_Used = cv.FileStorage(pointsPath_Used);
-ballsGT = p_GT.centroidsBalls;
-ballsUsed = p_Used.centroidsBalls;
-clipsGT = p_GT.centroidsClips;
-clipsUsed = p_Used.centroidsClips;
+ballsGT_c = load(pointsPath_inside_GT);
+ballsGT = ballsGT_c.M;
+ballsUsed_c = load(pointsPath_inside_Tested);
+ballsUsed = ballsUsed_c.M;
+clipsGT_c = load(pointsPath_outside_GT);
+clipsGT = clipsGT_c.M;
+clipsUsed_c = load(pointsPath_outside_Tested);
+clipsUsed = clipsUsed_c.M;
 
 % Concatenate points
 global pGT pUsed;

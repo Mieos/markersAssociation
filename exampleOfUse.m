@@ -3,24 +3,28 @@
 clear all;
 close all;
 
-numTest = "05";
-masterPath = "/media/rmodrzejewski/Maxtor/data/metalPigsXP/";
+%% Master path
+masterPath = "/home/richard/Projects/markersAssociation/exampleData/exampleData/";
 
-mexOCVpath = '/home/rmodrzejewski/Install/mexopencv';
+%% Path GT
+pointsPath_inside_GT=masterPath+"ref/markers_inside.mat";
+pointsPath_inside_GT=char(pointsPath_inside_GT);
+pointsPath_outside_GT=masterPath+"ref/markers_outside.mat";
+pointsPath_outside_GT=char(pointsPath_outside_GT);
 
-pointsPath_GT=masterPath+"model/segmentations/ballsAndClips/markers.yml";
-pointsPath_GT=char(pointsPath_GT);
+%% Path tested 
+pointsPath_inside_Tested=masterPath+"tested/markers_inside.mat";
+pointsPath_inside_Tested=char(pointsPath_inside_Tested);
+pointsPath_outside_Tested=masterPath+"tested/markers_outside.mat";
+pointsPath_outside_Tested=char(pointsPath_outside_Tested);
 
-pointsPath_Used=masterPath+"targets/"+numTest+"/markers.yml";
-pointsPath_Used=char(pointsPath_Used);
-
-resultPath = masterPath+"targets/"+numTest+"/resultsAssociations/v1/associations.yml";
+%% Results path
+resultPath = masterPath+"results/associations.mat";
 resultPath=char(resultPath);
-
-resultPLYPath = masterPath+"targets/"+numTest+"/resultsAssociations/v1/associations_U.ply";
+resultPLYPath = masterPath+"results/associations_U.ply";
 resultPLYPath=char(resultPLYPath);
-
-resultPLYPathGT = masterPath+"targets/"+numTest+"/resultsAssociations/v1/associations_GT.ply";
+resultPLYPathGT = masterPath+"results/associations_GT.ply";
 resultPLYPathGT=char(resultPLYPathGT);
 
-associateMarkers(mexOCVpath, pointsPath_GT, pointsPath_Used, resultPath, resultPLYPath , resultPLYPathGT);
+%% Associate the markers
+associateMarkers(pointsPath_inside_GT, pointsPath_outside_GT, pointsPath_inside_Tested, pointsPath_outside_Tested, resultPath, resultPLYPath , resultPLYPathGT);
