@@ -4,18 +4,18 @@ clear all;
 close all;
 
 %% Master path
-masterPath = "/home/richard/Projects/markersAssociation/exampleData/exampleData/";
+masterPath = "/home/mieos/data/v1_2/";
 
 %% Path GT
-pointsPath_inside_GT=masterPath+"ref/markers_inside.mat";
+pointsPath_inside_GT=masterPath+"ref/markers/markers_inside.mat";
 pointsPath_inside_GT=char(pointsPath_inside_GT);
-pointsPath_outside_GT=masterPath+"ref/markers_outside.mat";
+pointsPath_outside_GT=masterPath+"ref/markers/markers_outside.mat";
 pointsPath_outside_GT=char(pointsPath_outside_GT);
 
 %% Path tested 
-pointsPath_inside_Tested=masterPath+"tested/markers_inside.mat";
+pointsPath_inside_Tested=masterPath+"deformed_configs/01/markers_inside.mat";
 pointsPath_inside_Tested=char(pointsPath_inside_Tested);
-pointsPath_outside_Tested=masterPath+"tested/markers_outside.mat";
+pointsPath_outside_Tested=masterPath+"deformed_configs/01/markers_outside.mat";
 pointsPath_outside_Tested=char(pointsPath_outside_Tested);
 
 %% Results path

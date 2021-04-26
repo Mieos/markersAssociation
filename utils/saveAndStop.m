@@ -13,8 +13,7 @@ pcGT = pointCloud(pGT','Color',r);
 
 % Write results
 % Association file
-S = struct('Association', X );
-cv.FileStorage(resultPath,S);
+save(resultPath,'X');
 % Point clouds for visualisation
 pcwrite(pcU,resultPLYPath);
 pcwrite(pcGT,resultPLYPathGT);
