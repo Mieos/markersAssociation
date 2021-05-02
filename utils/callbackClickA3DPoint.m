@@ -33,20 +33,16 @@ pointCloudIndex = dsearchn(rotatedPointCloud(1:2,:)', ...
 h = findobj(gca,'Tag','pt'); % try to find the old point
 selectedPoint = pointCloudPoint(:, pointCloudIndex); 
 
+hold on;
+
 if isempty(h) % if it's the first click (i.e. no previous point to delete)
     
     % highlight the selected point
     h = plot3(selectedPoint(1,:), selectedPoint(2,:), ...
-        selectedPoint(3,:), 'r.', 'MarkerSize', 20); 
-    
-    %% DEBUG
-%     h = plot3(selectedPoint(1,:), selectedPoint(2,:), ...
-%         selectedPoint(3,:), 'r.', 'MarkerSize', 20, 'Marker', '*'); 
+        selectedPoint(3,:), 'r.', 'MarkerSize', 20);
     
     set(h,'Tag','pt'); % set its Tag property for later use   
-    
-%     h
-    
+        
 
 else % if it is not the first click
 
